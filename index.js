@@ -1,5 +1,6 @@
 
 let container = 0;
+let previousNum = 7;
 
 const input = document.getElementById("input");
 const mainDiv = document.querySelector(".main");
@@ -22,8 +23,13 @@ function generateGrid(){
 
 function generateRandomNumber(){
     
-    let num = Math.floor(Math.random() * 7);
+    let num = Math.floor(Math.random() * 7); 
     
+    if(num == previousNum){
+        num = generateRandomNumber();
+    }else{
+        previousNum = num;
+    }
     return num;
 
 }
