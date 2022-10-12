@@ -1,0 +1,37 @@
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    /* border: 2px solid red; */
+}
+
+body{
+    background-color: gainsboro;
+}
+
+.top{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main{
+    height:auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    height: 560px;
+    width: 560px;
+    border: 2px solid red;
+}
