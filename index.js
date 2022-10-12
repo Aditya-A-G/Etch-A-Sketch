@@ -42,12 +42,12 @@ function changeColor(e){
 function createGrid(size){
     
     let totalSize = size*size;
-    let dimension = 400/size;
+    let dimension = 550/size;
 
     container = document.createElement("div");
 
-    container.style.cssText = ` height: 400px;
-                                width: 400px;
+    container.style.cssText = ` height: 550px;
+                                width: 550px;
                                 display: flex;
                                 flex-wrap: wrap;`;
 
@@ -61,7 +61,7 @@ function createGrid(size){
                              width: ${dimension}px; 
                              background-color: rgb(100%, 100%, 100%);
                              border: 1px solid red`;
-                             
+
         container.appendChild(div);
 
         div.addEventListener("mouseover", changeColor);
