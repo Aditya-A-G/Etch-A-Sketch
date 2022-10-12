@@ -8,14 +8,17 @@ const btn = document.getElementById("submit");
 
 btn.addEventListener("click", generateGrid);
 
-createGrid(20);
+createGrid(16);
 
 
 function generateGrid(){
-
-    container.remove();
    
-    createGrid(input.value);
+    if(input.value > 100 || input.value < 1){
+        alert("Enter value between 1 - 100");
+    }else{
+        container.remove();
+        createGrid(input.value);
+    }
     
     input.value = '';
 
@@ -66,7 +69,7 @@ function createGrid(size){
         div.style.cssText = `height: ${dimension}px; 
                              width: ${dimension}px; 
                              background-color: rgb(100%, 100%, 100%);
-                             border: 1px solid red`;
+                             border: 1px solid #a3d4f2`;
 
         container.appendChild(div);
 

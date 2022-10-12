@@ -12,7 +12,7 @@ html {
 }
 
 body{
-    background-color: gainsboro;
+    background-color:#46cae4;
 }
 
 .top{
@@ -20,6 +20,37 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#input{
+    height: 32px;
+    width: 152px;
+    font-size: 16px;
+    padding-left: 8px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    margin-right: 8px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+#submit{
+    height: 32px;
+    width: 88px;
+    font-size: 16px;
+    color: grey;
+    border-radius: 8px;
+    outline: none;
+    border: none;
 }
 
 .main{
