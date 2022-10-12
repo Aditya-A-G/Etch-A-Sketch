@@ -28,10 +28,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.container{
-    height: 400px;
-    width: 400px;
-    display: flex;
-    flex-wrap: wrap;
+    /* border: 2px solid red; */
+    /* background-color: red; */
 }
