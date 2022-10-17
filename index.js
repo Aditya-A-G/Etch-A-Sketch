@@ -76,6 +76,13 @@ function changeColor(e){
             
         if(obj[color] > 0){
             obj[color] = obj[color] - 10;
+            if(obj[color] == 0){
+                e.target.style.backgroundColor = "black";
+            }else{
+                e.target.style.filter = `brightness(${obj[color]}%)`;
+            }
+        }else{
+            obj[color] = 90;
             e.target.style.filter = `brightness(${obj[color]}%)`;
         }
     }
