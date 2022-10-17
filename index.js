@@ -120,7 +120,7 @@ function getDarkerColor(color){
 
 function generateRandomNumber(){
     
-    let num = Math.floor(Math.random() * 255); 
+    let num = Math.floor(Math.random() * 256); 
     
     if(num == previousNum){
         num = generateRandomNumber();
