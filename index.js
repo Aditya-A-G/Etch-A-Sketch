@@ -1,7 +1,6 @@
 
 let container = 0;
 let previousNum = 7;
-let obj = {};
 
 const input = document.getElementById("input");
 const mainDiv = document.querySelector(".main");
@@ -58,35 +57,9 @@ function changeColor(e){
     
     let arr= ["rgb(255, 0, 0)", "rgb(255, 165, 0)", "rgb(255, 255, 0)", "rgb(0, 128, 0)", "rgb(0, 0, 255)", "rgb(75, 0, 130)", "rgb(238, 130, 238)"];
 
-    let color = e.target.style.backgroundColor;
-    
-    if(color == "rgb(255, 255, 255)"){
-        let index = generateRandomNumber();
-        e.target.style.backgroundColor = arr[index];
+    let index = generateRandomNumber();
 
-        color = arr[index];
-
-        if(!obj[color]){
-            obj[color] = 100;
-        }
-
-    }else{
-
-        color = e.target.style.backgroundColor;
-            
-        if(obj[color] > 0){
-            obj[color] = obj[color] - 10;
-            if(obj[color] == 0){
-                e.target.style.backgroundColor = "black";
-            }else{
-                e.target.style.filter = `brightness(${obj[color]}%)`;
-            }
-        }else{
-            obj[color] = 90;
-            e.target.style.filter = `brightness(${obj[color]}%)`;
-        }
-    }
-
+    e.target.style.backgroundColor = arr[index];
 
 }
 
