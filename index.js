@@ -30,7 +30,7 @@ function createGrid(size){
 
         div.style.cssText = `height: ${dimension}px; 
                              width: ${dimension}px; 
-                             background-color: rgb(100%, 100%, 100%);
+                             background-color: rgb(255, 255, 255);
                              border: 1px solid #a3d4f2`;
 
         container.appendChild(div);
@@ -54,18 +54,73 @@ function generateGrid(){
 }
 
 function changeColor(e){
+
+    let color = e.target.style.backgroundColor;
+
+    if(color == "rgb(255, 255, 255)"){
+
+        color = `rgb(${generateRandomNumber()}, ${generateRandomNumber()}, ${generateRandomNumber()})`;
+
+        e.target.style.backgroundColor = color;
+
+    }else{
+
+        color = getDarkerColor(color);
+        
+        e.target.style.backgroundColor = color;
+        
+    }
+
+}
+
+function getDarkerColor(color){
+
+    let rgb = color.slice(4, (color.length-1));
+
+    let arr = rgb.split(", ");
+
+    let r = arr[0];
+    let g = arr[1];
+    let b = arr[2];
+
+	if(r > 0)
+    {
+		r = Math.floor(r - 25.5);
+
+    	if(r < 0)
+        {
+            r = 0;
+        }
+    }
     
-    let arr= ["rgb(255, 0, 0)", "rgb(255, 165, 0)", "rgb(255, 255, 0)", "rgb(0, 128, 0)", "rgb(0, 0, 255)", "rgb(75, 0, 130)", "rgb(238, 130, 238)"];
+    if(g > 0)
+    {
+		g = Math.floor(g - 25.5);
 
-    let index = generateRandomNumber();
+    	if(g < 0)
+        {
+            g = 0;
+        }
+    }
+    
+    if(b > 0)
+    {
+		b = Math.floor(b - 25.5);
 
-    e.target.style.backgroundColor = arr[index];
+    	if(b < 0)
+        {
+            b = 0;
+        }
+    }
 
+    color = `rgb(${r}, ${g}, ${b})`;
+
+    return color;
 }
 
 function generateRandomNumber(){
     
-    let num = Math.floor(Math.random() * 7); 
+    let num = Math.floor(Math.random() * 255); 
     
     if(num == previousNum){
         num = generateRandomNumber();
